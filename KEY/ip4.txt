@@ -1,0 +1,4 @@
+206.189.80.125  django-server
+
+sudo user web
+password ..............

@@ -18,29 +18,31 @@
 {% endblock %}
 
 {% block content %}
+
 <div class="col-md-9 ">
     <div class="container-fluid ">
-        <div class="row" >
+        <div class="row">
             {% for blog in blogs %}
-            <div class="card my-2" id="cardclick" style="max-height: 250px;overflow:hidden">
-                <div class="row g-0 ">
-                  <div class="col-md-4">
-                    <a href="{% url 'blogdetail' blog.id %}" ><img src="{{ blog.images.url}}" class="img-fluid rounded-start" alt="..."></a>
-                  </div>
-                  <div class="col-md-8">
-                    <div class="card-body">
-                      <a href="#" class="text-decoration-none text-dark" ><h5 class="card-title">{{ blog.name }}</h5></a>
-                      <a href="#" class="text-decoration-none text-dark"><p class="card-text">{{ blog.description}}</p></a>
-                      <p class="card-text"><small class="text-muted"></small></p>
-                    </div> 
-                  </div>
-                  <div class=" col-md-4 footer ">
-                  </div>
-                </div>
-            </div>
-                <p class="ms-3" >by {{blog.writer}} // {{blog.create}}</p>
+                <div class="card mb-3 mt-3 more">
+                    <div class="row g-0">
+                        <div class="col-md-4 pt-2">
+                            <a href="{% url 'blogdetail' blog.id %}"><img src="{{ blog.images.url}}" class="img-fluid " alt="..."></a>
+                        </div>
+                        <div class="col-md-8 " style="max-width: 600px;max-height: 250px;overflow:hidden">
+                            <div class="card-body">
+                            <h5 class="card-title">{{ blog.name }}</h5>
+                            <a href="{% url 'blogdetail' blog.id %}" class="text-dark text-decoration-none"><p class="card-text">{{ blog.description}}</p></a>
+                            <p class="card-text"><small class="text-muted">Last {{ blog.create }}</small></p>
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <p class="text-success ps-2" > by {{  blog.writer }} | views :: {{ blog.views }}</p>
+                        </div>
+                    </div>
+                </div>	
             {% endfor %}
         </div>
     </div>
 </div>
+
 {% endblock %}

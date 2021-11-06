@@ -1,0 +1,27 @@
+Alias /static /home/web/web/static
+	<Directory /home/web/web/static>
+		Require all granted
+	</Directory>
+
+	Alias /media /home/web/web/media
+	<Directory /home/web/web/media>
+		Require all granted
+	</Directory>
+
+	<Directory /home/web/web/web>
+				<Files wsgi.py>
+			Require all granted
+		</Files>
+		</Directory>
+
+	WSGIScriptAlias / /home/web/web/web/wsgi.py
+	WSGIDaemonProcess django_app python-path=/home/web/web python-home=/home/web/venv
+	WSGIProcessGroup django_app
+
+
+ cd /home/web
+ sudo chown :www-data web/db.sqlite3
+ sudo chmod 664 web/db.sqlite3
+ sudo chown :www-data web/
+ sudo chown -R :www-data web/media
+ sudo chown -R 775 web/media

@@ -18,4 +18,9 @@ class Blogs(models.Model):
 
     def __str__(self):
         return self.name
+
+
+class PhotoAlbum(models.Model):
+    picture = models.ImageField(upload_to="pictures",blank=True)
+    
     

@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from category.models import Category
-from .models import Blogs 
+from .models import Blogs, PhotoAlbum 
 from django.core.paginator import Paginator, EmptyPage, InvalidPage
 
 # Create your views here.
@@ -29,6 +29,8 @@ def index(request):
 
 def blogdetail(request, id):
     blogdetail = Blogs.objects.get(id=id)
+    blogdetail.views = blogdetail.views + 1
+    blogdetail.save()
     return render(request,'blogdetail.html',{'blogdetail':blogdetail})
 
 
@@ -41,4 +43,8 @@ def searchCategory(request,category_id):
     last = Blogs.objects.all().order_by('-pk')[:1]
 
     return render(request, 'searchcategory.html',{'search':search,'categories':categories,'last':last,'blog':blog})
-    
+
+
+def about(request):
+    photos = PhotoAlbum.objects.all()
+    return render(request, 'about.html',{'photos':photos})
