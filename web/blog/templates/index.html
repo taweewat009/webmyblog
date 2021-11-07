@@ -5,7 +5,7 @@
 {% block profile %}
 
     <div class="card">
-        <img src="{% static 'photo.png' %}">
+        <img src="{% static 'photo.png' %}" class="img-fluid">
         <div class="card-body">
             <h5 class="card-title">Hello world.</h5>
             <p class="card-text">ทวีวัฒน์ บานฤทัย เป็นครูผู้ช่วย สอนที่โรงเรียนบ้านเซียมป่าหม้อ อำเภอแก้งคร้อ จังหวัดชัยภูมิ</p>
@@ -26,12 +26,12 @@
                 <div class="card mb-3 mt-3 more">
                     <div class="row g-0">
                         <div class="col-md-4 pt-2">
-                            <a href="{% url 'blogdetail' blog.id %}"><img src="{{ blog.images.url}}" class="img-fluid " alt="..."></a>
+                            <a href="{% url 'blogdetail' blog.slug %}"><img src="{{ blog.images.url}}" class="img-fluid " alt="..."></a>
                         </div>
                         <div class="col-md-8 " style="max-width: 600px;max-height: 250px;overflow:hidden">
                             <div class="card-body">
-                            <h5 class="card-title">{{ blog.name }}</h5>
-                            <a href="{% url 'blogdetail' blog.id %}" class="text-dark text-decoration-none"><p class="card-text">{{ blog.description}}</p></a>
+                            <h5 class="card-title">{{ blog.name }} <span class="badge bg-success">{{ blog.grade}}</span></h5>
+                            <a href="{% url 'blogdetail' blog.slug %}" class="text-dark text-decoration-none"><p class="card-text">{{ blog.description}}</p></a>
                             <p class="card-text"><small class="text-muted">Last {{ blog.create }}</small></p>
                             </div>
                         </div>
