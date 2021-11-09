@@ -89,8 +89,9 @@
 				{% endblock %}
 				<div class="card text-center py-2">
 					<h4 class="card-title ">หมวดหมู่บทเรียน</h4>
-					<a href="{% url 'category' cate_id=2 %}"><button class="btn btn-primary border">การออกแบบและเทคโนโลยี</button></a>
-					<a href="{% url 'category' cate_id=1 %}"><button class="btn btn-primary border">วิทยาการคำนวณ</button></a>
+					{% for cate in categories %}
+						<a href="{% url 'category' cate.slug %}">{{ cate.name}}</a>
+					{% endfor %}
 				</div>
 			</div>
 			<!--  ตรงนี้ใส่ content รายการเรื่องย่อต่างๆ จะแสดงตรงนี้-->
