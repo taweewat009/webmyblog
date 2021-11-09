@@ -89,8 +89,14 @@
 				{% endblock %}
 				<div class="card text-center py-2">
 					<h4 class="card-title ">หมวดหมู่บทเรียน</h4>
-					{% for cate in categories %}
-						<a href="{% url 'category' cate.slug %}">{{ cate.name}}</a>
+					{% for cate in link %}
+						<a href="{{ cate.get_url }}">{{ cate.name}}</a>
+					{% endfor %}
+				</div>
+				<div class="card text-center py-2">
+					<h4 class="card-title ">บทความล่าสุด</h4>
+					{% for cate in last %}
+						<a href="{{ cate.get_url }}">{{ cate.name }}</a>
 					{% endfor %}
 				</div>
 			</div>

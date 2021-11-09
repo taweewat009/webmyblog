@@ -7,12 +7,12 @@ from django.urls import reverse
 
 class Category(models.Model):
     name = models.CharField(max_length=200,unique=True)
-    slug = models.SlugField(null=False,unique=True,default=uuid.uuid1)
+    slug = models.SlugField(unique=True,default=uuid.uuid1)
     
     
     def get_url(self):
-        return reverse("category")
-
+        return reverse('category', args=[self.slug])
+    
     def __str__(self):
         return self.name 
 
