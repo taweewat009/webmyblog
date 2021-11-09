@@ -27,8 +27,8 @@ def index(request):
     return render(request, 'index.html',{'categories':categories,'blogs':blogperpage,'last':last})
 
 
-def blogdetail(request, slug):
-    blogdetail = Blogs.objects.get(slug=slug)
+def blogdetail(request, slug,post_slug):
+    blogdetail = Blogs.objects.get(_slug=slug,slug=post_slug)
     blogdetail.views = blogdetail.views + 1
     blogdetail.save()
     return render(request,'blogdetail.html',{'blogdetail':blogdetail})
