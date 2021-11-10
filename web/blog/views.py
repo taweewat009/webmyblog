@@ -14,6 +14,7 @@ def index(request,category_slug=None):
         blogs = Blogs.objects.all().filter(category=category_page)
     else:
         blogs = Blogs.objects.all()
+    
       
     return render(request, 'index.html',{'blogs':blogs,'category':category_page})
 
@@ -21,6 +22,8 @@ def index(request,category_slug=None):
 def blogdetail(request,category_slug,post_slug):
     try:
         blogdetail = Blogs.objects.get(category__slug=category_slug,slug=post_slug)
+        blogdetail.views = blogdetail.views + 1
+        blogdetail.save()
     except Exception as e :
         raise e
     return render(request,'blogdetail.html',{'blogdetail':blogdetail})

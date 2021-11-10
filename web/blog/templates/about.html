@@ -47,23 +47,32 @@
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse " id="navbarTogglerDemo01">
-                <a class="navbar-brand pe-5" href="#"><h1>Hello World.</h1></a>
+                <a class="navbar-brand pe-5" href="#"><h1>K R U B O M</h1></a>
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item ">
-                        <a class="nav-link text-white fs-3" aria-current="page" href="{% url 'index' %}">Home</a>
+                        <a class="a nav-link text-white fs-3" aria-current="page" href="{% url 'index' %}">Home</a>
                     </li>
                     <li class="nav-item ">
-                        <a class="nav-link text-white fs-3" href="#">Lesson</a>
+                        <a class="a nav-link text-white fs-3" href="{% url 'about' %}">About</a>
                     </li>
                     <li class="nav-item ">
-                        <a class="nav-link text-white fs-3" href="{% url 'about' %}">About</a>
+                        <a class="a nav-link text-white fs-3" href="{% url 'index' %}">Blog</a>
+                    </li>
+                    <li class="nav-item ">
+                        <a class="a nav-link text-white fs-3" href="{% url 'index' %}">Contact</a>
                     </li>
                 </ul>
             </div>
         </div>
     </nav>
+    <section class="container mt-5">    
+        <div class="container text-center">
+            <img src="{% static 'images/video-tutorials.png' %}" class="mt-5" width="100">
+            <h1 class="justify-content-center">Welcome to Website and Enjoy to reading...</h1>	   
+        </div>
+    </section><br>
 
-    <div class="container mt-5">
+    <div class="container">
         <div class="row">
             <div class="col-md-5 bg-success ps-5">
                 <h3 class="text-center text-white pt-3 pe-5">About me</h3>

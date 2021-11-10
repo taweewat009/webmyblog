@@ -60,27 +60,33 @@
 		<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span>
 		</button>
 		<div class="collapse navbar-collapse " id="navbarTogglerDemo01">
-			<a class="navbar-brand pe-5" href="#"><h1>Hello World.</h1></a>
+			<a class="navbar-brand pe-5" href="#"><h1>K R U B O M</h1></a>
 			<ul class="navbar-nav me-auto mb-2 mb-lg-0">
 				<li class="nav-item ">
 					<a class="a nav-link text-white fs-3" aria-current="page" href="{% url 'index' %}">Home</a>
 				</li>
 				<li class="nav-item ">
-					<a class="a nav-link text-white fs-3" href="#">Tutorials</a>
+					<a class="a nav-link text-white fs-3" href="{% url 'about' %}">About</a>
 				</li>
 				<li class="nav-item ">
-					<a class="a nav-link text-white fs-3" href="{% url 'about' %}">About</a>
+					<a class="a nav-link text-white fs-3" href="{% url 'index' %}">Blog</a>
+				</li>
+				<li class="nav-item ">
+					<a class="a nav-link text-white fs-3" href="{% url 'index' %}">Contact</a>
 				</li>
 			</ul>
 		</div>
 	</div>
 </nav>
-<section class="container my-5">
-	   	
-</section>
+<section class="container mt-5">    
+	<div class="container text-center">
+		<img src="{% static 'images/video-tutorials.png' %}" class="mt-5" width="100">
+		<h1 class="justify-content-center">Welcome to Website and Enjoy to reading...</h1>	   
+	</div>
+</section><br>
 
 <section class="container">
-	<div class="container-fluid mt-5">
+	<div class="container-fluid">
 		<div class="row">
 			<div class="col-md-3">
 				<!-- ตรงนี้จะแสดงหน้าโปรไฟล์ย่อๆ จะแสดงแค่หน้า index หน้าอื่นๆจะไม่แสดงผล-->
@@ -123,6 +129,7 @@
 			</div>
 		</div>
 	</div>
+</section>
 	
 	<div class="container-fluid bg-dark mt-3">
 		<footer class=" text-center text-white">		  
@@ -135,7 +142,7 @@
 			<!-- Copyright -->
 		</footer>
 	</div>
-</section>
+
 
 </body>
 </html>
